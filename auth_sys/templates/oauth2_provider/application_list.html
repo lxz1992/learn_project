@@ -1,0 +1,22 @@
+{% extends "oauth2_provider/base.html" %}
+
+{% load i18n %}
+{% block content %}
+    <div class="block-center">
+        <h3 class="block-center-heading">{% trans "Your applications" %}</h3>
+        {% if applications %}
+            <ul class="list-group">
+                {% for application in applications %}
+                    <li class="list-group-item">
+                        <a href="{{ application.get_absolute_url }}">{{ application.name }}</a>
+                        <span class="badge" title="users" data-toggle="tooltip" data-placement="right">{{ application.get_user_count }}</span>
+                    </li> 
+                {% endfor %}
+            </ul>
+
+            <a class="btn btn-success" href="{% url "oauth:register" %}">New Application</a>
+        {% else %}
+            <p>{% trans "No applications defined" %}. <a href="{% url 'oauth:register' %}">{% trans "Click here" %}</a> {% trans "if you want to register a new one" %}</p>
+        {% endif %}
+    </div>
+{% endblock content %}

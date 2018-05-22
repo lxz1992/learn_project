@@ -1,0 +1,23 @@
+{
+    "activity_id": "1",
+    "activity_name": "2017_MT6293_Zion_MP1",
+    "activity_category_name": "93",
+    "date_from": "2018-01-01",
+    "date_to": "",
+    "active": 1,
+    "db_scope": "",
+    "query_def": "",
+    "owner": "mtk11111",
+    "days_of_bug": 3,
+    "days_of_others": 7,
+    "additional_mail_to": "mtk80071,mtk22222",
+    "additional_mail_cc": "mtk22222222222,mtk000000",
+    "mail_to_assignee": 0,
+    "mail_to_manager": 1,
+    "user_defined_field": "test abc",
+    "mail_trigger_time": "* 7 * * *",
+    "additional_mail_fields": "{\"Time\":\"1\",\"Remark\":\"0\",\"Analysis\":\"0\",\"Tracking\":\"0\",\"Comments\":\"0\"}",
+    "user_defined_fields1" : "{\"witfield1\":{\"fieldname\":\"displayname\"}}",
+    "user_defined_fields2": "{\"Add_field1\":\"display name\"}",
+    "UpdatedAt": "2017/11/16 16:15"
+}

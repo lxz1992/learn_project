@@ -1,0 +1,38 @@
+{
+	"kind": "Pod",
+	"apiVersion": "v1",
+	"metadata": {
+		"name": "ap-b",
+		"namespace": "mtd-prod-kube-171019",
+		"labels": {
+			"app": "ap-b"
+		}
+	},
+	"spec": {
+		"containers": [
+			{
+				"name": "ap-b",
+				"image": "172.27.16.100:5000/mytodoprod_app1:20180402-rc2",
+				"imagePullPolicy": "IfNotPresent",
+				"env": [
+					{
+						"name": "DJANGO_SETTINGS_MODULE",
+						"value": "my_to_do.settings_prod"
+					},
+					{
+						"name": "LD_LIBRARY_PATH",
+						"value": "/usr/lib/oracle/12.2/client64/lib"
+					},
+					{
+						"name": "TZ",
+						"value": "Asia/Taipei"
+					}
+				]
+			}
+		],
+		"restartPolicy": "Always",
+		"nodeSelector": {
+			"deploy": "blue"
+		}
+	}
+}

@@ -1,0 +1,237 @@
+@import url("../../lib/boot-side-menu-1.0.0/BootSideMenu.css");
+@import "./cr_review_content_home.scss";
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    .container-fluid {
+        margin: 0 10px 0 10px;
+        .navbar {
+            display: inline-block;
+            .navbar-header {
+                a {
+                    font-family: fantasy;
+                }
+            }
+            span {
+                padding-right: 3px;
+            }
+        }
+    }
+    .container-fluid-sub {
+        margin: 0 10px 0 10px;
+        .navbar {
+            display: inline-block;
+            min-height: 30px;
+            .navbar-header {
+                a {
+                    font-family: fantasy;
+                }
+            }
+            span {
+                padding-right: 3px;
+            }
+        }
+        .navbar-brand {
+            padding: 0 5px;
+            height: 30px;
+            line-height: 30px;
+        }
+        .navbar-toggle {
+            margin-top: 0px;
+            padding: 9px 10px !important;
+        }
+        @media (min-width: 768px) {
+            .navbar-nav>li>a {
+                padding-top: 5px;
+                padding-bottom: 10px;
+                line-height: 20px;
+            }
+        }
+    }
+    .cr-content-title {
+        margin: 0 5px 0 17px;
+        span {
+            color: rgb(0, 140, 255);
+            font-weight: bold;
+            font-style: italic;
+            padding-right: 20px;
+        }
+    }
+    .cr-content {
+        margin: 0 15px 0 15px;
+        .cr-filter-area {
+            background-color: blueviolet;
+            border-style: groove;
+        }
+        .cr-table-chart {
+            background-color: red;
+        }
+    }
+    .cr-sidebar {
+        .cr-sidebar-header {
+            font-size: 30px;
+            text-align: center;
+        }
+    }
+    .cr-filterTable {
+        font-size: 15px;
+        font-family: Calibri;
+        font-weight: bold;
+        color: #333366;
+        width: 98%;
+        background-color: #f8f8fc;
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 3px;
+        margin-top: 0px;
+    }
+    .crDayClass {
+        width: 30px;
+        height: 16px;
+        border: 0px;
+        border-bottom: 1px solid #9999cc;
+        text-align: center;
+        font-family: Calibri;
+        font-size: 14px;
+        background-color: transparent;
+    }
+    .filterTypeItem {
+        margin: 2px;
+        margin-left: 0px;
+        padding: 5px;
+        border: 0px solid #aaaaaa;
+        background-color: #ffff88;
+    }
+    .keywordFilter {
+        border: 0px solid #aaaaff;
+        border-bottom: 1px solid #9999cc;
+        width: 100px;
+        background-color: transparent;
+        text-align: center;
+    }
+    #addKeywordFilterButton {
+        font-size: 11px;
+        font-family: Trebuchet MS;
+        font-weight: bold;
+        border: 0px solid #ccc;
+        background-color: transparent;
+        color: #005500;
+        cursor: pointer;
+    }
+    .filterTypeMpItem {
+        margin: 2px;
+        margin-left: 0px;
+        padding: 5px;
+        border: 0px solid #aaaaaa;
+        background-color: #ccddff;
+    }
+    .filterTypeTimeItem {
+        margin: 2px;
+        margin-left: 0px;
+        padding: 5px;
+        border: 0px solid #aaaaaa;
+        background-color: #ffcccc;
+    }
+    .filterTypeAnalysisItem {
+        margin: 2px;
+        margin-left: 0px;
+        padding: 5px;
+        border: 0px solid #aaaaaa;
+        background-color: #f7e181;
+    }
+    .filterTypeRemarkItem {
+        margin: 2px;
+        margin-left: 0px;
+        padding: 5px;
+        border: 0px solid #aaaaaa;
+        background-color: #ffddbb;
+    }
+    .selSpan {
+        padding: 5px;
+        padding-left: 0px;
+        border: 1px solid #ddd;
+        border-right: 3px solid #ddd;
+        font-family: Calibri;
+        font-size: 14px;
+        background-color: #f5f5fc;
+    }
+    .cr_review_config_form {
+        margin: -5px;
+        margin-left: 40px
+    }
+    .config_title {
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold
+    }
+    .column-filtet-span {
+        font-size: 14px;
+        font-family: Calibri;
+        font-weight: bold;
+        color: #1a086b;
+        background-color: #b5b5c262;
+    }
+    .crlist-column {
+        thead {
+            tr {
+                color: white;
+                background-color: #669966;
+                th {
+                    text-align: center;
+                    font-family: Calibri;
+                    font-weight: bold;
+                    font-size: 14px
+                }
+            }
+        }
+        tbody {
+            tr {
+                color: #000079;
+                &:nth-of-type(even) {
+                    background-color: white;
+                }
+                &:nth-of-type(odd) {
+                    background-color: #ddffdd;
+                }
+                td {
+                    //text-align: center;
+                    font-family: Calibri; //font-weight: bold;
+                    font-size: 13px
+                }
+            }
+        }
+    }
+    .crcolumn_analysis {
+        background-color: #f7e1c1;
+        color: #c62;
+    }
+    .crcolumn_time {
+        background-color: #ffcccc;
+        color: red;
+    }
+    .crcolumn_remark {
+        background-color: #ffddcc;
+        color: #642;
+    }
+    .crcolumn_tracking {
+        background-color: #ccddff;
+    }
+    .crColorFlavor a{
+        color: red;
+    }
+    .crColorFlavor {
+        color: red;
+    }
+}
+
+.version-footer {
+    clear: both;
+    height: 100px;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    visibility: hidden;
+}

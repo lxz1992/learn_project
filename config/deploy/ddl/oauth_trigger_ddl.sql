@@ -1,0 +1,86 @@
+--------------------------------------------------------
+--  File created - Friday-March-16-2018   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Trigger OAUTH_APPLICATION_TR
+--------------------------------------------------------
+
+  CREATE OR REPLACE TRIGGER "MYTODO"."OAUTH_APPLICATION_TR" 
+BEFORE INSERT ON OAUTH2_PROVIDER_APPLICATION 
+FOR EACH ROW 
+BEGIN
+  <<COLUMN_SEQUENCES>>
+  BEGIN
+    IF INSERTING AND :NEW.ID IS NULL THEN
+      SELECT OAUTH_APPLICATION_SEQ.NEXTVAL INTO :NEW.ID FROM SYS.DUAL;
+    END IF;
+  END COLUMN_SEQUENCES;
+END;
+/
+ALTER TRIGGER "MYTODO"."OAUTH_APPLICATION_TR" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger OAUTH_GRANT_TR
+--------------------------------------------------------
+
+  CREATE OR REPLACE TRIGGER "MYTODO"."OAUTH_GRANT_TR" 
+BEFORE INSERT ON OAUTH2_PROVIDER_GRANT 
+FOR EACH ROW 
+BEGIN
+  <<COLUMN_SEQUENCES>>
+  BEGIN
+    IF INSERTING AND :NEW.ID IS NULL THEN
+      SELECT OAUTH_GRANT_SEQ.NEXTVAL INTO :NEW.ID FROM SYS.DUAL;
+    END IF;
+  END COLUMN_SEQUENCES;
+END;
+/
+ALTER TRIGGER "MYTODO"."OAUTH_GRANT_TR" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger OAUTH_REFRESH_TOKEN_TR
+--------------------------------------------------------
+
+  CREATE OR REPLACE TRIGGER "MYTODO"."OAUTH_REFRESH_TOKEN_TR" 
+BEFORE INSERT ON OAUTH2_PROVIDER_REFRESHTOKEN 
+FOR EACH ROW 
+BEGIN
+  <<COLUMN_SEQUENCES>>
+  BEGIN
+    IF INSERTING AND :NEW.ID IS NULL THEN
+      SELECT OAUTH_REFRESH_TOKEN_SEQ.NEXTVAL INTO :NEW.ID FROM SYS.DUAL;
+    END IF;
+  END COLUMN_SEQUENCES;
+END;
+/
+ALTER TRIGGER "MYTODO"."OAUTH_REFRESH_TOKEN_TR" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger OAUTH2_PROVIDER_ACCESSTOKEN_T
+--------------------------------------------------------
+
+  CREATE OR REPLACE TRIGGER "MYTODO"."OAUTH2_PROVIDER_ACCESSTOKEN_T" 
+BEFORE INSERT ON OAUTH2_PROVIDER_ACCESSTOKEN 
+FOR EACH ROW 
+BEGIN
+  <<COLUMN_SEQUENCES>>
+  BEGIN
+    IF INSERTING AND :NEW.ID IS NULL THEN
+      SELECT OAUTH2_PROVIDER_ACCESSTOKEN_S.NEXTVAL INTO :NEW.ID FROM SYS.DUAL;
+    END IF;
+  END COLUMN_SEQUENCES;
+END;
+/
+ALTER TRIGGER "MYTODO"."OAUTH2_PROVIDER_ACCESSTOKEN_T" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger ACCESSTOKEN_TR
+--------------------------------------------------------
+
+  CREATE OR REPLACE TRIGGER "MYTODO"."ACCESSTOKEN_TR" 
+BEFORE INSERT ON OAUTH2_PROVIDER_ACCESSTOKEN 
+FOR EACH ROW 
+BEGIN
+  <<COLUMN_SEQUENCES>>
+  BEGIN
+    NULL;
+  END COLUMN_SEQUENCES;
+END;
+/
+ALTER TRIGGER "MYTODO"."ACCESSTOKEN_TR" ENABLE;

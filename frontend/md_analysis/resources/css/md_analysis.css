@@ -1,0 +1,213 @@
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.button {
+  width: 80px;
+  line-height: 20px;
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 1px 1px 1px #333;
+  border-radius: 5px;
+}
+
+.button:nth-child(6n) {
+  margin-right: 0;
+}
+
+.button.gray {
+  color: #8c96a0;
+  text-shadow: 1px 1px 1px #fff;
+  border: 1px solid #dce1e6;
+  box-shadow: 0 1px 2px #fff inset, 0 -1px 0 #a8abae inset;
+  background: -webkit-linear-gradient(top, #f2f3f7, #e4e8ec);
+  background: -moz-linear-gradient(top, #f2f3f7, #e4e8ec);
+  background: linear-gradient(top, #f2f3f7, #e4e8ec);
+}
+
+.gray.side:after {
+  text-shadow: -2px 0 1px #fff;
+  border-top: 1px solid #d4d4d4;
+  box-shadow: -2px 0 1px #eceef1 inset;
+  background: -webkit-linear-gradient(right, #e1e6ea, #f2f2f6 60%);
+  background: -moz-linear-gradient(right, #e1e6ea, #f2f2f6 60%);
+  background: linear-gradient(right, #e1e6ea, #f2f2f6 60%);
+}
+
+#viewRadioBtn .notActive {
+  color: #3276b1;
+  background-color: #fff;
+}
+
+.titleClass {
+  font-size: 18px;
+  margin: 5px 5px 0px 5px;
+  font-family: Tahoma;
+  color: #333366;
+  font-weight: bold;
+}
+
+.subsubTitleClass {
+  font-family: Calibri;
+  font-size: 14px;
+  margin: 5px;
+  margin-bottom: 10px;
+  color: #333366;
+}
+
+.SelClass {
+  font-size: 18px;
+  font-weight: bold;
+  float: right;
+  margin-right: 10px;
+  color: #666699;
+}
+
+#fail-info {
+  font-size: 20px;
+  font-weight: bold;
+  color: red;
+}
+
+td.details-control {
+  background: url('../css/images/details_open.png') no-repeat center center;
+  cursor: pointer;
+}
+
+tr.shown td.details-control {
+  background: url('../css/images/details_close.png') no-repeat center center;
+}
+
+table {
+  clear: both;
+  border-collapse: collapse;
+  table-layout: fixed; 
+  word-wrap: break-word; 
+  
+}
+
+.spinner-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  background: #eee;
+}
+.spinner-container:before {
+  content: "";
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+.spinner-container .spinner-frame {
+    display: inline-block;
+    vertical-align: middle;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    border: 5px solid #fff;
+    padding: 10px;
+}
+
+.spinner-container .spinner-frame .spinner-cover {
+      background: #fff;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      position: relative;
+      z-index: 2;
+}
+
+.spinner-container .spinner-frame .spinner-bar {
+    background: #29d;
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 100% 0 0 0;
+    -webkit-animation: spinny 2s linear infinite;
+    transform-origin: 100% 100%;
+}
+  @-webkit-keyframes spinny {
+  0% {
+  transform: rotate(0deg);
+  background: #29d;
+  }
+  50% {
+  transform: rotate(180deg);
+  background: #00427c;
+  }
+  100% {
+  transform: rotate(360deg);
+  background: #29d;
+  }
+}
+#spinner-modal{
+  width: 100%;
+  height: 100%;
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  z-index:100;
+  background: #eee;
+  display:none;
+  text-align:center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+}
+#spinner-modal.show{
+    display: -webkit-box !important;
+}
+.modal_wrapper{
+    display: table;
+      height: 100%;
+        margin: 0px auto;
+}
+      
+
+.glyphicon-refresh-animate {
+  -animation: spin .7s infinite linear;
+  -ms-animation: spin .7s infinite linear;
+  -webkit-animation: spinw .7s infinite linear;
+  -moz-animation: spinm .7s infinite linear;
+}
+
+@keyframes spin {
+  from { transform: scale(1) rotate(0deg);}
+  to { transform: scale(1) rotate(360deg);}
+}
+
+@-webkit-keyframes spinw {
+  from { -webkit-transform: rotate(0deg);}
+  to { -webkit-transform: rotate(360deg);}
+}
+
+@-moz-keyframes spinm {
+  from { -moz-transform: rotate(0deg);}
+  to { -moz-transform: rotate(360deg);}
+}
+
+.version-footer {
+  clear: both;
+  height: 100px;
+  position: relative;
+  width: 100%;
+  bottom: 0;
+  visibility: hidden;
+}

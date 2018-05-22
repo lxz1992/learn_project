@@ -1,0 +1,41 @@
+{
+    "updateTime": "2017/12/03 09:23:31",
+    "state": {
+        "Assigned": 10,
+        "Submitted": 2,
+        "Working": 20,
+        "Reworking": 1,
+        "Resolved": 30,
+        "Verified": 20,
+        "closed": 50
+    },
+    "group": {
+        "Modem team": 80,
+        "Non modem team": 53
+    },
+    "all_patch": {
+        "New Bug": 20,
+        "known issue": 30,
+        "change feature": 30,
+        "new feature": 50
+    },
+    "modem_patch": {
+        "New Bug": 10,
+        "known issue": 20,
+        "change feature": 10,
+        "new feature": 40
+    },
+    "modem_open":{
+        "team1":10,
+        "team2":2,
+        "team3":1,
+        "team4":2,
+        "team5":3,
+        "team6":5,
+        "team7":7,
+        "team8":1,
+        "team9":9,
+        "team10":12,
+        "team11":2
+    }
+}

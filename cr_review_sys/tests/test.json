@@ -1,0 +1,25 @@
+{  
+   "activity_id":1,
+   "activity_name":"test case: test_activity_mail_notice",
+   "days_of_bug":3,
+   "days_of_others":4,
+   "to_list":[  
+      "mtk10809"
+   ],
+   "cc_list":[  
+      "mtk02471"
+   ],
+   "to_assignee":0,
+   "cc_manager":1,
+   "addi_info":{  
+      "Time":0,
+      "Remark":0,
+      "Analysis":1,
+      "Tracking":0,
+      "Comments":1,
+      "WITS_Field1":1,
+      "WITS_Field2":0,
+      "WITS_Field3":1,
+      "Add_Field1":1
+   }
+}

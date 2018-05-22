@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CR Review</title>
+</head>
+
+<body>
+    <!-- client side area begin -->
+    <!--div class="modal fade" id="errorModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 id="error-header" class="modal-title">Modal Header</h4>
+                </div>
+                <div class="modal-body">
+                    <p id="error-message">Some text in the modal.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div-->
+    <div id="spinner-modal" class="modal inmodal fade modal_wrapper" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static"
+        data-keyboard="true">
+        <div class="modal-dialog" style="width:100%; height:100%">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!--button type="button" class="close" data-dismiss="modal">
+                        <span>&times;</span>
+                    </button-->
+                </div>
+                <div class="modal-body" style="width:100%; height:100%">
+                    <div class="spinner-container">
+                        <!--There's the container that centers it-->
+                        <div class="spinner-frame">
+                            <!--The background-->
+                            <div class="spinner-cover"></div>
+                            <!--The Foreground-->
+                            <div class="spinner-bar"></div>
+                            <!--and The Spinny thing-->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="mdAnalysisContainer">
+
+        <div class="titleClass">
+            <table>
+                <tr>
+                    <td>
+                        <a href="https://www.mediatek.com/" target="_blank">
+                            <!--img src="css/images/mtklogo.png"-->
+                        </a>
+                    </td>
+                    <td>Modem Support Dashboard</td>
+                    <td>
+                        <span class="subsubTitleClass">Latest Successful Update:
+                            <span id="lastestUpdate"></span>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="subsubTitleClass">
+                            <button type="button" class="btn btn-xs btn-success" id="btnUpdate">
+                                <i id="md_icon_update_btn" class="icon-refresh glyphicon glyphicon-refresh glyphicon-refresh-animate"></i>
+                                <span id="md_span_btn_update_txt">update</span>
+                            </button>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="subsubTitleClass">
+                            <span id="spanMdSyncError" class="label label-danger"></span>
+                        </span>
+                    </td>
+                    <td>
+                        <img id="info" />
+                        <label id="lblLoading" class="subsubTitleClass"></label>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+
+        <div style="background-color:#bbb;">
+            <div class="form-group">
+                <label for="viewRadioBtn" class="col-sm-1 col-md-1 control-label">View: </label>
+                <div class="col-sm-11 col-md-11">
+                    <div class="input-group">
+                        <div id="viewRadioBtn" class="btn-group">
+                            <a class="btn btn-primary btn-sm active" data-toggle="curView" data-title="WW Statistics">WW Statistics</a>
+                            <a class="btn btn-primary btn-sm notActive" data-toggle="curView" data-title="Operator Certification">Operator Certification</a>
+                            <a class="btn btn-primary btn-sm notActive" data-toggle="curView" data-title="Resolved Eservices">Resolved Eservices</a>
+                            <a class="btn btn-primary btn-sm notActive" data-toggle="curView" data-title="Open Eservices">Open Eservices</a>
+                            <a class="btn btn-primary btn-sm notActive" data-toggle="curView" data-title="FTA">FTA</a>
+                            <a class="btn btn-primary btn-sm notActive" data-toggle="curView" data-title="CES Specific">CES Specific</a>
+                            <!--a class="btn btn-primary btn-sm notActive" data-toggle="curView" data-title="Team Loading">Team Loading</a>
+                            <a class="btn btn-primary btn-sm notActive" data-toggle="curView" data-title="QA Specific">QA Specific</a>
+                            <a class="btn btn-primary btn-sm notActive" data-toggle="curView" data-title="RF ANT Specific(Trend)">RF ANT Specific(Trend)</a>
+                            <a class="btn btn-primary btn-sm notActive" data-toggle="curView" data-title="RF ANT Specific(Issue)">RF ANT Specific(Issue)</a>
+                            <a class="btn btn-primary btn-sm notActive" data-toggle="curView" data-title="Known Issue">Known Issue</a>
+                            <a class="btn btn-primary btn-sm notActive" data-toggle="curView" data-title="eServices Breakdown">eServices Breakdown</a-->
+                        </div>
+                        <input type="hidden" name="curView" id="curView">
+                    </div>
+                </div>
+            </div>
+            <div id="act-loading"></div>
+
+        </div>
+        <div class="whitespace" style="height: 60px"></div>
+        <div id="fail-info" class="glyphicon glyphicon-warning-sign" style="display: none"></div>
+
+        <div id="ww_all" style="height:1200px" class="col-sm-12 col-md-12">
+            <div class="col-sm-12 col-md-12">
+                <span class="SelClass" id="labelmyearto">
+                    <label>&nbsp;&nbsp;To:&nbsp;&nbsp;</label>
+                    <select id="myearEnd" name="myearEnd"></select>
+                </span>
+                <span class="SelClass"  id="labelmyearfrom">
+                    <label>&nbsp;&nbsp;From:&nbsp;&nbsp;</label>
+                    <select id="myearStart" name="myearStart"></select>
+                </span>
+                <span class="SelClass">
+                    <label>State:&nbsp;&nbsp;</label>
+                    <select id="State" name="State"></select>
+                </span>
+            </div>
+            <div>
+                <div id="container_map" class="col-sm-9 col-md-9" style=" min-height: 600px; min-width: 310px; float:left; margin: 0 auto"></div>
+                <div id="urgent_select_result" class="col-sm-2 col-md-2" style="height:400px; float:right"></div>
+            </div>
+            <div class="whitespace" style="height: 60px"></div>
+            <div class="col-sm-12 col-md-12">
+                <span class="SelClass">
+                    <label>&nbsp;&nbsp;To:&nbsp;&nbsp;</label>
+                    <select id="yearEnd" class="selYear" name="yearEnd"></select>
+                </span>
+                <span class="SelClass">
+                    <label>&nbsp;&nbsp;From:&nbsp;&nbsp;</label>
+                    <select id="yearStart" class="selYear" name="yearStart"></select>
+                </span>
+                <span class="SelClass">
+                    <label>Type:&nbsp;&nbsp;</label>
+                    <select id="Type" name="Type"></select>
+                </span>
+                <div id="container_customer" style="min-width:300px;  height:400px"></div>
+            </div>
+        </div>
+
+        <div id="resolved_all" style="height:600px; display: none" class="col-sm-12 col-md-12">
+            <span class="SelClass">
+                <label>&nbsp;&nbsp;&nbsp;&nbsp;Period:</label>
+                <select id="periodSel" name="periodSel"></select>
+            </span>
+            <span class="SelClass">
+                <label>&nbsp;&nbsp;&nbsp;Customer:</label>
+                <select id="custSel" name="custSel"></select>
+            </span>
+            <span class="SelClass">
+                <label>Site:&nbsp;&nbsp;</label>
+                <select id="deptSel" name="deptSel"></select>
+            </span>
+            <div id="container_resolved" style="min-width:300px;  height:400px"></div>
+        </div>
+
+        <div id="open_all" style="display: none" class="col-sm-12 col-md-12">
+            <span class="SelClass">
+                <label>&nbsp;&nbsp;Site:&nbsp;&nbsp;</label>
+                <select id="deptOpenSel" name="deptOpenSel"></select>
+            </span>
+            <div id="open_customer" style="min-width:300px;  height:400px"></div>
+            <div id="open_depay" class="col-sm-6 col-md-6" style="height:400px; position:relative; top:60px; float:left"></div>
+            <div id="open_site" class="col-sm-6 col-md-6" style="height:400px; position:relative; top:60px; float:right"></div>
+        </div>
+
+        <div id="operator_cert" style="display: none" class="col-sm-12 col-md-12">
+            <div id="cert_map" class="col-sm-8 col-md-8" style="height:600px;float:left"></div>
+            <div id="select_result" class="col-sm-3 col-md-3" style="height:400px; float:right"></div>
+        </div>
+
+        <div id="fta" style="display: none" class="col-sm-12 col-md-12">
+            <div id="fta_chip_ongoing" class="col-sm-4 col-md-4" style="height:360px;float:left"></div>
+            <div id="fta_chip_comingin" class="col-sm-4 col-md-4" style="height:360px;float:left">chip2</div>
+            <div id="fta_project_yearly" class="col-sm-4 col-md-4" style="height:800px;float:right">
+                <span class="SelClass">
+                    <label>&nbsp;&nbsp;Year Select:&nbsp;&nbsp;</label>
+                    <select id="YearFTASel" name="YearFTASel"></select>
+                </span>
+                <div id="fta_project_distribution" style="height:380px"></div>
+                <div id="fta_cusstomer_top10" style="height:380px; position:relative; top:35px;"></div>
+            </div>
+            <div id="fta_customer_ongoing" class="col-sm-4 col-md-4" style="height:360px; position:relative; top:60px;float:left">customer1</div>
+            <div id="fta_customer_comingin" class="col-sm-4 col-md-4" style="height:360px; position:relative; top:60px;float:left">customer1</div>
+        </div>
+
+        <div id="loading" style="display: none" class="col-sm-12 col-md-12">
+            <div id="team_loading" class="col-sm-12 col-md-12" style="height:400px"></div>
+            <div id="user_loading" class="col-sm-12 col-md-12" style="height:400px; position:relative; top:60px"></div>
+        </div>
+
+        <div id="ces" style="display: none" class="col-sm-12 col-md-12">
+            <div id="mea_top10" class="col-sm-12 col-md-12" style="height:400px"></div>
+            <div id="eu_operator" class="col-sm-12 col-md-12" style="height:400px; position:relative; top:20px"></div>
+            <!--div id="issue_list" class="col-sm-12 col-md-12" style="height:400px; position:relative; top:60px"></div-->
+        </div>
+
+        <div id="qa" style="height:1200px" class="col-sm-12 col-md-12">
+            <span class="SelClass">
+                <label>Issue Category:&nbsp;&nbsp;</label>
+                <select id="Category" name="Category"></select>
+            </span>
+            <span class="SelClass">
+                <label>&nbsp;&nbsp;From:&nbsp;&nbsp;</label>
+                <select id="qayearStart" name="qayearStart"></select>
+            </span>
+            <span class="SelClass">
+                <label>&nbsp;&nbsp;To:&nbsp;&nbsp;</label>
+                <select id="qayearEnd" name="qayearEnd"></select>
+            </span>
+            <div id="qa_map" style=" min-height: 600px; max-width: 1200px ; min-width: 600px; margin: 0 auto"></div>
+        </div>
+
+        <div id="rf_ant_trend" class="col-sm-12 col-md-12">
+            <span class="SelClass">
+                <label>&nbsp;&nbsp;From:&nbsp;&nbsp;</label>
+                <select id="rfyearStart" name="rfyearStart"></select>
+            </span>
+            <span class="SelClass">
+                <label>&nbsp;&nbsp;To:&nbsp;&nbsp;</label>
+                <select id="rfyearEnd" name="rfyearEnd"></select>
+            </span>
+            <div id="issue_trend" style="min-width:300px;  height:400px"></div>
+            <div id="cr_top10" class="col-sm-6 col-md-6" style="height:400px; position:relative; top:60px; float:left"></div>
+            <div id="effort_top10" class="col-sm-6 col-md-6" style="height:400px; position:relative; top:60px; float:right"></div>
+        </div>
+        <div id="rf_ant_issue" style="height:1200px" class="col-sm-12 col-md-12">
+            <span class="SelClass">
+                <label>&nbsp;&nbsp;From:&nbsp;&nbsp;</label>
+                <select id="rfIssueyearStart" name="rfIssueyearStart"></select>
+            </span>
+            <span class="SelClass">
+                <label>&nbsp;&nbsp;To:&nbsp;&nbsp;</label>
+                <select id="rfIssueyearEnd" name="rfIssueyearEnd"></select>
+            </span>
+            <div id="isssue_summary" style="min-width:300px;  height:400px"></div>
+
+            <div class="whitespace" style="height: 60px"></div>
+            <span class="SelClass">
+                <label>&nbsp;&nbsp;Issue Code:&nbsp;&nbsp;</label>
+                <select id="rfIsssueCode" name="rfIsssueCode"></select>
+            </span>
+            <span class="SelClass">
+                <label>&nbsp;&nbsp;Customer:&nbsp;&nbsp;</label>
+                <select id="rfCustomer" name="rfCustomer"></select>
+            </span>
+            <span class="SelClass">
+                <label>&nbsp;&nbsp;From:&nbsp;&nbsp;</label>
+                <select id="rflistyearStart" name="rflistyearStart"></select>
+            </span>
+            <span class="SelClass">
+                <label>&nbsp;&nbsp;To:&nbsp;&nbsp;</label>
+                <select id="rflistyearEnd" name="rflistyearEnd"></select>
+            </span>
+            <div id="issue_list" style=" height: 600px"></div>
+        </div>
+
+        <div id="known_issue" style="height:1000px" class="col-sm-12 col-md-12">
+            <div id="reason" class="col-sm-6 col-md-6" style="height:800px; float:left; position:relative; top:60px">
+                <span class="SelClass">
+                    <label>&nbsp;&nbsp;To:&nbsp;&nbsp;</label>
+                    <select id="knownIssueyearEnd" name="knownIssueyearEnd"></select>
+                </span>
+                <span class="SelClass">
+                    <label>&nbsp;&nbsp;From:&nbsp;&nbsp;</label>
+                    <select id="knownIssueyearStart" name="knownIssueyearStart"></select>
+                </span>
+                <div id="known_issue_by_reason" style="height:700"></div>
+            </div>
+            <div id="seperate" class="col-sm-6 col-md-6" style="height:1000px; float:right">
+                <div id="known_issue_customer" style=" height: 300px; position:relative; top:10px"></div>
+                <div id="known_issue_rd1" style=" height: 300px"></div>
+                <div id="known_issue_rd2" style=" height: 300px"></div>
+            </div>
+        </div>
+
+        <div id="eServer_breakdown" style="height:600px" class="col-sm-12 col-md-12">
+            <span class="SelClass">
+                <label>&nbsp;&nbsp;To:&nbsp;&nbsp;</label>
+                <select id="breakdownyearEnd" name="breakdownyearEnd"></select>
+            </span>
+            <span class="SelClass">
+                <label>&nbsp;&nbsp;From:&nbsp;&nbsp;</label>
+                <select id="breakdownyearStart" name="breakdownyearStart"></select>
+            </span>
+            <span class="SelClass">
+                <label>&nbsp;&nbsp;Site:&nbsp;&nbsp;</label>
+                <select id="breakdownsite" name="breakdownsite"></select>
+            </span>
+            <span class="SelClass">
+                <label>&nbsp;&nbsp;State:&nbsp;&nbsp;</label>
+                <select id="breakdownstate" name="breakdownstate"></select>
+            </span>
+            <div class="whitespace" style="height:60px"></div>
+            <div id="graph_container" class="col-sm-12 col-md-12">
+                <div id="chip_breakdown" class="col-sm-4 col-md-4" style="height:400px;float:left">the first graph</div>
+                <div id="modem_breakdown" class="col-sm-4 col-md-4" style="height:400px;float:left">the second graph</div>
+                <div id="project_breakdown" class="col-sm-4 col-md-4" style="height:400px;float:right">the third graph</div>
+            </div>
+        </div>
+
+        <div id="projdistrmodal" class="modal inmodal fade" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static"
+            data-keyboard="true">
+            <div class="modal-dialog" style="width:100%">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span>&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="operator" style="height:900px; top:10px" class="col-sm-12 col-md-12">
+                            <div id="chip_ongoing" class="col-sm-4 col-md-4" style="height:360px;float:left"></div>
+                            <div id="chip_comingin" class="col-sm-4 col-md-4" style="height:360px;float:left">chip2</div>
+                            <div id="project_yearly" class="col-sm-4 col-md-4" style="height:800px;float:right">
+                                <span class="SelClass">
+                                    <label>&nbsp;&nbsp;Year Select:&nbsp;&nbsp;</label>
+                                    <select id="YearSel" name="YearFTASel"></select>
+                                </span>
+                                <div id="project_distribution" style="height:380px"></div>
+                                <div id="cusstomer_top10" style="height:380px; position:relative; top:35px"></div>
+                            </div>
+                            <div id="customer_ongoing" class="col-sm-4 col-md-4" style="height:360px; position:relative; top:60px;float:left">customer1</div>
+                            <div id="customer_comingin" class="col-sm-4 col-md-4" style="height:360px; position:relative; top:60px;float:left">customer1</div>
+                        </div>
+                        -
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="projlistmodal" class="modal inmodal fade" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static"
+            data-keyboard="true">
+            <div class="modal-dialog" style="width:100%">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span>&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="project_info" style="height:100%; top:10px" class="col-sm-12 col-md-12">
+                            <span class="titleClass">
+                                <span id="projectlist_title"></span>
+                            </span>
+
+                            <div id="project_list" class="col-sm-12 col-md-12" style="height:300px">
+                                <table id="project_table" class="hover ui table" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                    <thead>
+                                        <tr class="noBorder">
+                                            <td width=100></td>
+                                            <td width=100></td>
+                                            <td width=100></td>
+                                            <td width=100></td>
+                                            <td width=120></td>
+                                            <td width=120></td>
+                                            <td width=120></td>
+                                            <td width=160></td>
+                                            <td width=160></td>
+                                            <td width=100></td>
+                                            <td width=100></td>
+                                            <td width=100></td>
+                                            <td width=100></td>
+                                        </tr>
+                                        <tr>
+                                            <th>PROJECTID</th>
+                                            <th>CUSTOMER</th>
+                                            <th>PROJECT_NAME</th>
+                                            <th>PLATFORM_NAME</th>
+                                            <th>SWPM</th>
+                                            <th>TYPE</th>
+                                            <th>MILESTONE_NAME</th>
+                                            <th>START_DATA</th>
+                                            <th>END_DATA</th>
+                                            <th>WITH_VOLTE</th>
+                                            <th>WITH_WFC</th>
+                                            <th>WITH_VLTE</th>
+                                            <th>ISCOMPLETED</th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+
+                            <div id="project_status" class="col-sm-12 col-md-12" style="height:600px; top:10px">
+                                <div id="div1" style="height:300px">
+                                    <div id="cr_state" class="col-sm-6 col-md-6" style="height:300px; position:relative;float:left"></div>
+                                    <!--div id="cr_assignee" class="col-sm-4 col-md-4" style="height:300px; position:relative;float:left"></div-->
+                                    <div id="all_patch" class="col-sm-6 col-md-6" style="height:300px; position:relative;float:right"></div>
+                                </div>
+                                <div id="div2" style="height:300px">
+                                    <!--div id="modem_patch" class="col-sm-4 col-md-4" style="height:300px; position:relative;float:left"></div-->
+                                    <div id="modem_open" class="col-sm-12 col-md-12" style="height:300px; position:relative;float:right"></div>
+                                </div>
+
+                            </div>
+                        </div>
+                        -
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="issue_info" class="modal inmodal fade" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="true">
+            <div class="modal-dialog" style="width:100%">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span>&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <span class="titleClass">
+                            <span id="issuelist_title"></span>
+                        </span>
+                        <div id='grpChkBox'>
+                            <BR/>
+                            <input type="checkbox" class="toggle-vis" data-column="1" checked>
+                            <span>CR ID</span>
+                            <input type="checkbox" class="toggle-vis" data-column="2" checked>
+                            <span>Title</span>
+                            <input type="checkbox" class="toggle-vis" data-column="3" checked>
+                            <span>Patch</span>
+                            <input type="checkbox" class="toggle-vis" data-column="4" checked>
+                            <span>Class</span>
+                            <input type="checkbox" class="toggle-vis" data-column="5">
+                            <span>Country</span>
+                            <input type="checkbox" class="toggle-vis" data-column="6">
+                            <span>Operator</span>
+                            <input type="checkbox" class="toggle-vis" data-column="7">
+                            <span>Customer</span>
+                            <input type="checkbox" class="toggle-vis" data-column="8">
+                            <span>Dept</span>
+                            <input type="checkbox" class="toggle-vis" data-column="9" checked>
+                            <span>Assignee</span>
+                            <input type="checkbox" class="toggle-vis" data-column="10">
+                            <span>Platform</span>
+                            <input type="checkbox" class="toggle-vis" data-column="11">
+                            <span>RAT</span>
+                            <input type="checkbox" class="toggle-vis" data-column="12">
+                            <span>Module</span>
+                            <input type="checkbox" class="toggle-vis" data-column="13">
+                            <span>Priority</span>
+                            <input type="checkbox" class="toggle-vis" data-column="14" checked>
+                            <span>Submit Date</span>
+                            <input type="checkbox" class="toggle-vis" data-column="15">
+                            <span>Assign Date</span>
+                            <input type="checkbox" class="toggle-vis" data-column="16">
+                            <span>Project Name</span>
+                            <BR/>
+                            <BR/>
+                        </div>
+
+                        <table id="table_id_issue" class="ui table" border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <thead>
+                                <tr class="noBorder">
+                                    <td width=10></td>
+                                    <td width=90></td>
+                                    <td width=300></td>
+                                    <td width=100></td>
+                                    <td width=120></td>
+                                    <td width=120></td>
+                                    <td width=120></td>
+                                    <td width=120></td>
+                                    <td width=160></td>
+                                    <td width=140></td>
+                                    <td width=140></td>
+                                    <td width=70></td>
+                                    <td width=100></td>
+                                    <td width=60></td>
+                                    <td width=80></td>
+                                    <td width=80></td>
+                                    <td width=80></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th width=10></th>
+                                    <th width=90>CR ID</th>
+                                    <th width=300>Title</th>
+                                    <th>Patch</th>
+                                    <th>Class</th>
+                                    <th>Country</th>
+                                    <th>Operator</th>
+                                    <th>Customer</th>
+                                    <th>Dept</th>
+                                    <th>Assignee</th>
+                                    <th>Platform</th>
+                                    <th>RAT</th>
+                                    <th>Module</th>
+                                    <th>Priority</th>
+                                    <th>Submit Date</th>
+                                    <th>Assign Date</th>
+                                    <th>Project Name</th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                        </table>
+                        -
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- client side area end -->
+</body>
+
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>MyToDo</title>
+    {% block custom_style %} {% endblock %}
+</head>
+
+<body>
+    <div id="sys-nav-bar">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-mytodo" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">My To-Do</a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbar-collapse-mytodo">
+                    <ul id="main-sys" class="nav navbar-nav">
+                        <li>
+                            <a href="/cr_review/">CR Revew</a>
+                        </li>
+                        <li>
+                            <a href="/md_analysis/">MD Analysis</a>
+                        </li>
+                    </ul>
+                    <ul id="sys-info" class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a id="btn-user-info-nav" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <img id="user-profile-icon" class=" user-profile-icon-cls main-nav-icon-sz" src="../../assets/img/icons8-contacts-50.png">
+                                <span id="user-profile-name" class="user-profile-name-cls"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <!-- <li>
+                                    <a href="#">
+                                        Help Center
+                                    </a>
+                                </li>
+                                <li role="separator" class="divider"></li> -->
+                                <li id="system-logout-li" style="display:none;">
+                                    <a href="#" id="btn-logout">
+                                        <span class="fa fa-sign-out" aria-hidden="true"></span>
+                                        Log Out
+                                    </a>
+                                </li>
+                                <li id="system-login-li">
+                                    <a id="btn-login-view" href="#" data-toggle="modal" data-target="#login-modal">
+                                        <span class="fa fa-sign-in " aria-hidden="true"></span> Log In</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <span class="fa fa-lg fa-question-circle-o main-nav-icon-sz" aria-hidden="true"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <a href="#">
+                                        Help Center
+                                    </a>
+                                </li>
+                                <li role="separator" class="divider"></li>
+                                <li>
+                                    <a href="#" data-toggle="modal" data-target="#version-view-container">
+                                        <span class="fa fa-info-circle" aria-hidden="true"></span> About
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- end of collapsed -->
+            </div>
+            <!-- end of container-fluid -->
+        </nav>
+    </div>
+    <div class="login-view-container">
+        <div id="login-view" class="login-card login-card-container" style="display:none;">
+            <img id="profile-img" class="profile-img-card" src="../../assets/img/avatar_2x.png" />
+            <p id="profile-name" class="profile-name-card"></p>
+            <form class="form-signin">
+                <span id="reauth-email" class="reauth-email"></span>
+                <input type="text" id="login-dlg-username" class="form-control" placeholder="User ID" required autofocus>
+                <input type="password" id="login-dlg-password" class="form-control" placeholder="Password" required>
+                <div id="login-error-msg" style="display:none; color: #d50000;"></div>
+                <div id="remember" class="checkbox">
+                    <label>
+                        <input type="checkbox" value="remember-me"> Remember me
+                    </label>
+                </div>
+                <a href="javascript:void(0)" class="login-btn btn-lg btn-primary btn-block btn-signin">Sign in</button>
+            </form>
+            <!-- /form -->
+            <a href="#" class="forgot-password">
+                Forgot the password?
+            </a>
+        </div>
+        <!-- /card-container -->
+    </div>
+    <div id="version-view-container" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">System Info.</h4>
+                </div>
+                <div class="modal-body">
+                    <p>v{{ BACKEND_VERSION }}-@frontend-version@</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dyn-body">
+        <!-- client side area begin -->
+        {% block content %} {% endblock %}
+        <!-- client side area end -->
+    </div>
+</body>
+
+</html>

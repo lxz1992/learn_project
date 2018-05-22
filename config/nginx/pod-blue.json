@@ -1,0 +1,30 @@
+{
+	"kind": "Pod",
+	"apiVersion": "v1",
+	"metadata": {
+		"name": "st-b",
+		"namespace": "mtd-prod-kube-171019",
+		"labels": {
+			"app": "st-b"
+		}
+	},
+	"spec": {
+		"containers": [
+			{
+				"name": "st-b",
+				"image": "172.27.16.100:5000/mytodoprod_nginx1:20180402-rc2",
+				"imagePullPolicy": "IfNotPresent",
+				"env": [
+					{
+						"name": "TZ",
+						"value": "Asia/Taipei"
+					}
+				]
+			}
+		],
+		"restartPolicy": "Always",
+		"nodeSelector": {
+			"deploy": "blue"
+		}
+	}
+}

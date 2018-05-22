@@ -1,0 +1,82 @@
+{
+   "sEcho":1,
+   "iTotalRecords":4,
+   "iTotalDisplayRecords":4,
+   "aaData":[
+      [
+          "1",
+         "JRDCHZ",
+         "ELSA6 NA",
+         "MT6738",
+         "Jay Yang",
+         "OPTR(AT&T NA)",
+         "OPTR(AT&T NA)",
+         "2017-04-17",
+         "2017-06-13",
+         "1",
+         "1",
+         "0",
+         "1"
+      ],
+      [
+          "2",
+         "JRDCHZ",
+         "ELSA6 NA",
+         "MT6738",
+         "Jay Yang",
+         "OPTR(AT&T NA)",
+         "OPTR(AT&T NA) MR",
+         "2017-10-16",
+         "",
+         "1",
+         "1",
+         "0",
+         "0"
+      ],
+      [
+          "3",
+         "VANZQ",
+         "Z22P",
+         "MT6775W",
+         "xiaowen wu",
+         "OPTR Entry(AT&T NA)",
+         "OPTR Entry(AT&T NA)",
+         "2017-06-01",
+         "2017-06-30",
+         "0",
+         "0",
+         "0",
+         "1"
+      ],
+      [
+          "4",
+         "VANZQ1",
+         "Z22P",
+         "MT6775W",
+         "xiaowen wu",
+         "OPTR Entry(AT&T NA)",
+         "OPTR Entry(AT&T NA)",
+         "2017-06-01",
+         "2017-06-30",
+         "0",
+         "0",
+         "0",
+         "1"
+      ],
+      [
+          "5",
+         "VANZQ2",
+         "Z22P",
+         "MT6775W",
+         "xiaowen wu",
+         "OPTR Entry(AT&T NA)",
+         "OPTR Entry(AT&T NA)",
+         "2017-06-01",
+         "2017-06-30",
+         "0",
+         "0",
+         "0",
+         "1"
+      ]
+   ]
+}

@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CR Review</title>
+</head>
+
+<body>
+    <!-- client side area begin -->
+
+    <div class="container-fluid cr-topmenu cr_review_form">
+        <div class="container-fluid-sub cr-content-title cr_review_form">
+            <nav class="navbar navbar-default col-sm-7 col-md-7">
+                <div class="container-fluid">
+                    <div class="navbar-cat">
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="#">Category</a>
+                        </div>
+                        <div id="navbar" class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav" id="review-category">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <label class="cr-review-home-title-activity">Current Activity:
+                <span class="cr-review-activity">default-activity</span>
+            </label>
+            <label class="cr-review-home-title-update-time">start date:
+                <span class="cr-review-activity-start-date">unknown</span>
+            </label>
+        </div>
+        <nav class="navbar navbar-default col-sm-7 col-md-7">
+            <div class="container-fluid">
+                <div class="navbar-view">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">CR Review</a>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="cr-topmenu-item" data-toggle="curView" data-title="Home">
+                                <a href="#">
+                                    <span class="fa fa-home"></span>Home</a>
+                            </li>
+                            <li class="cr-topmenu-item" data-toggle="curView" data-title="CR List">
+                                <a href="#">
+                                    <span class="fa fa-list"></span>CR List</a>
+                            </li>
+                            <li class="cr-topmenu-item" data-toggle="curView" data-title="CR Review">
+                                <a href="#">
+                                    <span class="fa fa-eye"></span>CR Review</a>
+                            </li>
+                            <li class="cr-topmenu-item" data-toggle="curView" data-title="Waived CR">
+                                <a href="#">
+                                    <span class="fa fa-pause"></span>Waived CR</a>
+                            </li>
+                            <li class="cr-topmenu-item" data-toggle="curView" data-title="CR Notify">
+                                <a href="#">
+                                    <span class="fa fa-envelope"></span>CR Notify</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <nav class="navbar navbar-default col-sm-5 col-md-5">
+            <div class="container-fluid">
+                <div class="navbar-cq">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">WITS</a>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav" id="review-dbscope">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+    </div>
+
+    
+    <div class="col-sm-12 col-md-12 cr_review_form">
+        <span id="viewHint" class="viewHint"></span>
+    </div>
+    <div class="container-fluid cr-filterTable col-sm-12 col-md-12 cr_review_form">
+        <div class="panel-heading" style="width:5%">
+            <h3 class="panel-title">
+                <span class='fa fa-filter'>Filter</span>
+            </h3>
+        </div>
+        <div style="width:95%">
+            <table class="cr-filterSubTable">
+                <tr>
+                    <td>
+                        <nobr>
+                            <span class="selSpan">
+                                <span class="filterTypeItem" id="crOpenDayLabel">Submit</span>
+                                <input type="text" id="crOpenDay" class="crDayClass" value="" /> days</span>
+                        </nobr>
+                    </td>
+                    <td>
+                        <nobr>
+                            <span class="selSpan home-list">
+                                <span class="filterTypeItem">Submit in</span>
+                                <input type="text" id="crInDay" class="crDayClass" value="" /> days</span>
+                        </nobr>
+                    </td>
+                    <td>
+                        <nobr>
+                            <span class="selSpan">
+                                <span class="filterTypeItem" id="crKeywordLabel">CR Title Keyword</span>
+                                <span class='search-keyword-input'>
+                                    <input type="text" class="keywordFilter">
+                                </span>
+                                <span class="input-group-btn">
+                                    <button class="add-keyword" id="addKeywordFilterButton">
+                                        ...
+                                    </button>
+                                </span>
+                            </span>
+                        </nobr>
+                    </td>
+                    <td>
+                        <nobr>
+                            <span class="selSpan">
+                                <span class="filterTypeItem">Group</span>
+                                <span id="groupSelSpanId">
+                                    <select name="selectTeam" id="selectGroup">
+                                        <option></option>
+                                        <option>group 1</option>
+                                    </select>
+                                </span>
+                            </span>
+                        </nobr>
+                    </td>
+                    <td>
+                        <nobr>
+                            <span class="selSpan">
+                                <span class="filterTypeItem">Team</span>
+                                <span id="teamSelSpanId">
+                                    <select name="selectTeam" id="selectTeam">
+                                        <option></option>
+                                        <option>team 1</option>
+                                    </select>
+                                </span>
+                            </span>
+                        </nobr>
+                    </td>
+                    <span class="nohome">
+                        <td>
+                            <span class="selSpan nohome">
+                                <span class="filterTypeTimeItem nohome">Time</span>
+                                <input type="checkbox" id="timeCheckbox" value="10,16,19" class="timeCheckbox nohome filterCrColumns" />
+                        </td>
+                        <td>
+                            <span class="selSpan nohome">
+                                <span class="filterTypeAnalysisItem nohome">Analysis</span>
+                                <input type="checkbox" id="crAnalysisCheckbox" value="27" class="crAnalysisCheckbox nohome filterCrColumns" />
+                        </td>
+                        <td>
+                            <span class="selSpan nohome">
+                                <span class="filterTypeRemarkItem nohome">Remark</span>
+                                <input type="checkbox" id="crRemarkCheckbox" value="28" class="crRemarkCheckbox nohome filterCrColumns" />
+                        </td>
+                        <td>
+                            <span class="selSpan nohome">
+                                <span class="filterTypeMpItem nohome">Tracking</span>
+                                <input type="checkbox" id="mpTrackingCheckbox" value="24,25,26" class="mpTrackingCheckbox nohome filterCrColumns" />
+                        </td>
+                        </span>
+                </tr>
+            </table>
+        </div>
+        <div class="nohome" style="width:95%">
+            <div class="whitespace" style="height: 8px"></div>
+            <table>
+                <!--define for cr filters-->
+                <tr>
+                    <td>
+                        <nobr>
+                            <span class="selSpan">
+                                <span class="filterTypeItem">Class</span>
+                                <input type="checkbox" name="crClassCheckbox" class="crClassCheckbox all-class bug patch patch-checked nolist-checked" value="Bug"
+                                />
+                                <span class="checkboxText all-class bug patch">Bug</span>
+                                <input type="checkbox" name="crClassCheckbox" class="crClassCheckbox all-class nobug patch  patch-checked nolist-checked"
+                                    value="New feature" />
+                                <span class="checkboxText all-class nobug patch">New feature</span>
+                                <input type="checkbox" name="crClassCheckbox" class="crClassCheckbox all-class nobug patch  patch-checked nolist-checked"
+                                    value="Change feature" />
+                                <span class="checkboxText all-class nobug patch">Change feature</span>
+                                <input type="checkbox" name="crClassCheckbox" class="crClassCheckbox all-class nobug nolist-checked" value="Question" />
+                                <span class="checkboxText all-class nobug">Question</span>
+                                <input type="checkbox" name="crClassCheckbox" class="crClassCheckbox all-class nobug nolist-checked" value="Others" />
+                                <span class="checkboxText all-class nobug">Others</span>
+                            </span>
+                        </nobr>
+                    </td>
+                    <td>
+                        <nobr>
+                            <span class="selSpan">
+                                <span class="filterTypeItem">State</span>
+                                <input type="checkbox" name="crStateCheckbox" class="crStateCheckbox all-state patch nolist-checked" value="Submitted" />
+                                <span class="checkboxText all-state patch">Submitted</span>
+                                <input type="checkbox" name="crStateCheckbox" class="crStateCheckbox all-state nolist-checked" value="Assigned" />
+                                <span class="checkboxText all-state">Assigned</span>
+                                <input type="checkbox" name="crStateCheckbox" class="crStateCheckbox all-state nolist-checked" value="Working" />
+                                <span class="checkboxText all-state">Working</span>
+                                <input type="checkbox" name="crStateCheckbox" class="crStateCheckbox all-state nolist-checked" value="Reworking" />
+                                <span class="checkboxText all-state">Reworking</span>
+                                <input type="checkbox" name="crStateCheckbox" class="crStateCheckbox all-state patch patch-checked" value="Resolved" />
+                                <span class="checkboxText all-state patch">Resolved</span>
+                                <input type="checkbox" name="crStateCheckbox" class="crStateCheckbox all-state patch patch-checked" value="Verified" />
+                                <span class="checkboxTex all-statet patch">Verified</span>
+                                <input type="checkbox" name="crStateCheckbox" class="crStateCheckbox all-state patch patch-checked" value="Closed" />
+                                <span class="checkboxText all-state patch">Closed</span>
+                            </span>
+                        </nobr>
+                    </td>
+                    <!--td>
+                        <span class="selSpan  no-list">
+                            <span class="filterTypeItem no-list">Comments</span>
+                            <input type="radio" name="commentViewRadio" class="commentViewRadio no-list" value="Append" checked />
+                            <span class="checkboxText no-list">Append</span>
+                            <input type="radio" name="commentViewRadio" class="commentViewRadio no-list" value="Inline" />
+                            <span class="checkboxText no-list">Inline</span>
+                    </td-->
+                </tr>
+            </table>
+        </div>
+        <div class="whitespace" style="height: 8px"></div>
+    </div>
+
+    <div class="container-fluid cr-content cr_review_form">
+        <!-- insert related page according to the value of CR view -->
+        <div class='cr-review-content-home'>
+            <div class="search-result">
+                <div class="content-body card">
+                    <div class="card-block">
+                        <h4 class="card-title">
+                            <span class="fa fa-table"></span> Summary</h4>
+                        <table id="home-result-summary-table" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Total</th>
+                                    <th>Open</th>
+                                    <th>Completed</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="content-body card">
+                    <div class="card-block">
+                        <h4 class="card-title">
+                            <span class="fa fa-table"></span> CR Count by Class-State</h4>
+                        <table id="home-result-class-state-table" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Class\State</th>
+                                    <th>Submitted</th>
+                                    <th>Assigned</th>
+                                    <th>Working</th>
+                                    <th>Reworking</th>
+                                    <th>Resolved</th>
+                                    <th>Verified</th>
+                                    <th>Closed</th>
+                                    <th>Sum</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="content-body card">
+                    <div class="card-block">
+                        <h4 class="card-title">
+                            <span class="fa fa-table"></span> CR Count by Resolution</h4>
+                        <table id="home-result-resolution-table" class="table table-bordered table-striped">
+                        </table>
+                    </div>
+                </div>
+
+                <div class="content-body card">
+                    <div class="card-block">
+                        <h4 class="card-title">
+                            <span class="fa fa-table"></span> CR Count by Date</h4>
+                        <div class="card">
+                            <div class="card-header">
+                                <span class="fa fa-minus"></span> Daily/Weekly CR Count</div>
+                            <table id="home-result-daily-cr-table" class="table table-bordered table-striped cr-count-table">
+                            </table>
+                            <div id="plotChartCrDailyCountContainer">
+                                Daily CR Trend
+                            </div>
+                            <table id="home-result-week-cr-table" class="table table-bordered table-striped cr-count-table">
+                            </table>
+                            <div id="plotChartCrWeekCountContainer">
+                                Week CR Trend
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <span class="fa fa-minus"></span> Daily Open CR Category Count</div>
+                            <table id="home-result-daily-open-cr-table" class="table table-bordered table-striped cr-count-table" style="white-space: nowrap;">
+                            </table>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <span class="fa fa-minus"></span> Accumulated CR Count</div>
+                            <table id="home-result-daily-accumulated-cr-table" class="table table-bordered table-striped cr-count-table" style="white-space: nowrap;">
+                            </table>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <span class="fa fa-minus"></span> Daily/Weekly Effective Check-in</div>
+                            <table id="home-result-daily-checkin-table" class="table table-bordered table-striped cr-count-table" style="white-space: nowrap;">
+                            </table>
+                            <div class="card-block">
+
+                            </div>
+                            <table id="home-result-week-checkin-table" class="table table-bordered table-striped cr-count-table" style="white-space: nowrap;">
+                            </table>
+                            <div id="plotChartCrWeekCheckinContainer">
+                                Week Effective Check-in
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div id="crCountTotalOpenByTeamOption">
+                                <div class="card-header">
+                                    <span class="fa fa-minus"></span> CR Count by Team (
+                                    <input type="radio" id="viewCrCountByTeam_Both" name="viewTypeRadio" class="crCountByTeamBtn" value="Both" checked>Both</input>
+                                    <input type="radio" id="viewCrCountByTeam_Total" name="viewTypeRadio" class="crCountByTeamBtn" value="Total">Total</input>
+                                    <input type="radio" id="viewCrCountByTeam_Open" name="viewTypeRadio" class="crCountByTeamBtn" value="Open">Open</input>
+                                    )
+                                </div>
+                            </div>
+                            <div id="plotChartCrByTeamContainer"> CR Count by Team</div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <span class="fa fa-minus"></span> CR Daily Accumulated Resolution Trend</div>
+                            <div id="plotChartDailyResolutionContainer"> CR Daily Accumulated Resolution Trend</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div class='cr_review_form cr-review-content-list'>
+        <div class="crlist-body card">
+            <div class="card-block">
+                <div>
+                    <h5>
+                        <span id="crlist_count">Count=</span>
+                    </h5>
+                </div>
+                <div calss="column-filter" id='crcolumnChkBox'>test</div>
+                <table id="crreviewFilteredList" class="crlist-column table table-bordered table-striped" width="100%">
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="cr-sidebar">
+        <div class="cr-sidebar-header">
+            CR Review
+        </div>
+        <div class="list-group">
+            <a href="#activity-list" class="list-group-item" data-toggle="collapse" for="activity-list">Activity</a>
+            <div class="list-group collapse" id="activity-list">
+                <a href="#ongoing-list" class="list-group-item" data-toggle="collapse" for="ongoing-list">OnGoing</a>
+                <div class="list-group collapse" id="ongoing-list">
+                    <!-- add items when loading data -->
+                </div>
+
+                <a href="#finished-list" class="list-group-item" data-toggle="collapse" for="finished-list">Finished</a>
+                <div class="list-group collapse" id="finished-list">
+                    <!-- add items when loading data -->
+                </div>
+            </div>
+
+            <a href="#config-list" class="list-group-item" data-toggle="collapse" for="config-list">Config</a>
+            <div class="list-group collapse" id="config-list">
+                <a href="#config-activity-list" class="list-group-item" data-toggle="collapse" for="config-activity-list">Activities</a>
+                <div class="list-group collapse" id="config-activity-list">
+                    <a href="#configongoing-list" class="list-group-item" data-toggle="collapse" for="configongoing-list">OnGoing</a>
+                    <div class="list-group collapse" id="configongoing-list">
+                        <!-- add items when loading data -->
+                    </div>
+
+                    <a href="#configfinished-list" class="list-group-item" data-toggle="collapse" for="configfinished-list">Finished</a>
+                    <div class="list-group collapse" id="configfinished-list">
+                        <!-- add items when loading data -->
+                    </div>
+                </div>
+                <a href="#" class="list-group-item">CSS</a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!--For activity config window -->
+    <div id="activity-config-div" style="height:800px" class="col-sm-11 col-md-11 cr_review_config_form">
+        <form>
+            <!--div class="panel panel-success col-sm-6 col-md-6" style="position:relative; top:0px; float:left">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Activity Category Configuration</h3>
+                </div>
+                <div class="panel-body">
+                    This is for activity category
+                </div>
+            </div-->
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Activity Configuration</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="config_title">Activity Admin Configuration</div>
+                    <div class="whitespace col-sm-12 col-md-12" style="height: 30px"></div>
+                    <div class="form-group row">
+                        <label for="selected-activity-id" class="col-sm-2 col-md-2 col-form-label">Activity:</label>
+                        <label id="selected-activity-id" class="col-sm-9 col-md-9 col-form-label">Activity:</label>
+                    </div>
+                    <div class="panel panel-warning">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">PM configuration</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="form-group row">
+                                <label for="config-date-from" class="col-sm-2 col-md-2 col-form-label">Date From:</label>
+                                <div class="col-sm-3 col-md-3">
+                                    <input type="date" class="form-control" id="config-date-from">
+                                </div>
+                                <label for="config-date-to" class="col-sm-1 col-md-1 col-form-label">Date To:</label>
+                                <div class="col-sm-3 col-md-3">
+                                    <input type="date" class="form-control" id="config-date-to">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <!--label for="config-db-list" class="col-sm-2 col-md-2 col-form-label">DB Scope:</label>
+                                <div class="col-sm-4 col-md-4">
+                                    <select id="config-db-list" data-placeholder="DB Scopt" class="multi-select col-sm-12 col-md-12" multiple>
+                                        <option value=""></option>
+                                    </select>
+                                </div-->
+                                <label for="config-owner-list" class="col-sm-1 col-md-1 col-form-label">Owners:</label>
+                                <div class="col-sm-6 col-md-6">
+                                    <select id="config-owner-list" data-placeholder="Owners" class="multi-select col-sm-12 col-md-12" multiple>
+                                        <option value=""></option>
+                                    </select>
+                                </div>
+                                <div class="form-check form-check-inline col-sm-3 col-md-3">
+                                    <input class="form-check-input" type="checkbox" id="activityactive" value="Active">
+                                    <label class="form-check-label" for="activityactive">Active</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="config-query-def" class="col-sm-2 col-md-2 col-form-label">Query Definition:</label>
+                                <div class="col-sm-9 col-md-9" id="config-query-def" style = "height: 270px">
+                                    <!--textarea class="form-control" id="config-query-def" rows="2"></textarea-->
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Notify configuration</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="form-group row">
+                                <label for="config-bug-day" class="col-sm-3 col-md-3 col-form-label">Max Assign Day for Bug:</label>
+                                <div class="col-sm-2 col-md-2">
+                                    <input type="text" class="form-control" id="config-bug-day">
+                                </div>
+                                <label for="config-others-day" class="col-sm-3 col-md-3 col-form-label">Max Assign Day for Others:</label>
+                                <div class="col-sm-2 col-md-2">
+                                    <input type="text" class="form-control" id="config-others-day">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="config-mailto-list" class="col-sm-3 col-md-3 col-form-label">Mail To List:</label>
+                                <div class="col-sm-8 col-md-8">
+                                    <select id="config-mailto-list" data-placeholder="Mail to List" class="multi-select col-sm-12 col-md-12" multiple>
+                                        <option value=""></option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="config-ccto-list" class="col-sm-3 col-md-3 col-form-label">CC To List:</label>
+                                <div class="col-sm-8 col-md-8">
+                                    <select id="config-ccto-list" data-placeholder="CC to List" class="multi-select col-sm-12 col-md-12" multiple>
+                                        <option value=""></option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-check form-check-inline col-sm-3 col-md-3">
+                                <input class="form-check-input" type="checkbox" id="istoassignee" value="To Assignee">
+                                <label class="form-check-label" for="istoassignee">To Assignee</label>
+                            </div>
+                            <div class="form-check form-check-inline col-sm-3 col-md-3">
+                                <input class="form-check-input" type="checkbox" id="istomanager" value="CC Manager">
+                                <label class="form-check-label" for="istomanager">CC Manager</label>
+                            </div>
+                            <div class="whitespace col-sm-12 col-md-12" style="height: 2px"></div>
+                            <div class="form-group row">
+                                <label for="trigger_schedule" class="col-sm-3 col-md-3 col-form-label">Trigger Schedule:</label>
+                                <div class="col-sm-8 col-md-8">
+                                    <input type="text" class="form-control col-sm-6 col-md-6" id="trigger_schedule">
+                                </div>
+                                <!--input type="image" class="form-control col-sm-1 col-md-1" style="width:35px;height:35px" src="" id="scheduleHelp" data-toggle="popover" data-content="help for schedule" /-->
+                            </div>
+                            <small id="triggerscheduleHelpBlock" class="form-text text-muted">
+                                This field follows the syntax of cron. Specifically, each line consists of 5 fields separated by TAB or whitespace: MINUTE
+                                HOUR DOM MONTH DOW
+                            </small>
+                            <div class="whitespace col-sm-12 col-md-12" style="height: 10px"></div>
+                            <div class="whitespace col-sm-8 col-md-8" id="config-notify-additional-info" style="font-size: 13px"></div>
+                            <div class="col-sm-4 col-md-4">
+                                <input type="text" class="form-control col-sm-4 col-md-4" id="notify_additional_other_field">
+                            </div>
+                            <div class="whitespace col-sm-12 col-md-12" style="height: 5px"></div>
+                            <div class="form-group row">
+                                <label for="config-wits-field" class="col-sm-3 col-md-3 col-form-label">User defined Fields from Wits:</label>
+                                <div class="col-sm-9 col-md-9" id="config-wits-field" style = "height: 270px">
+                                    <!--textarea class="form-control" id="config-note" rows="2"></textarea-->
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="config-todo-field" class="col-sm-3 col-md-3 col-form-label">User defined Fields in My Todo:</label>
+                                <div class="col-sm-9 col-md-9" id="config-todo-field" style = "height: 270px">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="whitespace col-sm-12 col-md-12" style="height: 20px"></div>
+                    <div style="text-align:center">
+                        <button type="submit" class="btn btn-primary" id="configSubmit">Submit</button>
+                        <button type="cancel" class="btn btn-default" id="configCancel">Cancel</button>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+    <!--For CR Review window -->
+    <div id="crReviewModal" class="modal inmodal fade" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static"
+        data-keyboard="true">
+        <div class="modal-dialog" style="width:70%">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <label for="selected-cr-id" class="col-sm-2 col-md-2 col-form-label">CR ID:</label>
+                        <label id="selected-cr-id" class="col-sm-3 col-md-3 col-form-label">CRID</label>
+                        <label for="activity-id" class="col-sm-2 col-md-2 col-form-label">ACTIVITY ID:</label>
+                        <label id="activity-id" class="col-sm-3 col-md-3 col-form-label"></label>
+                    </div>
+                    <div class="form-group row">
+                        <label for="cr_analysis_importance" class="col-sm-1 col-md-1 col-form-label">Importance:</label>
+                        <div class="col-sm-2 col-md-2">
+                            <select id="cr_analysis_importance" data-placeholder="Importance" class="chosen-select col-sm-12 col-md-12">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                        <label for="cr_analysis_warroom" class="col-sm-1 col-md-1 col-form-label">War Room:</label>
+                        <div class="col-sm-3 col-md-3">
+                            <select id="cr_analysis_warroom" data-placeholder="War Room" class="chosen-select col-sm-12 col-md-12">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                        <label for="cr_analysis_progress" class="col-sm-1 col-md-1 col-form-label">Progress:</label>
+                        <div class="col-sm-3 col-md-3">
+                            <select id="cr_analysis_progress" data-placeholder="Progress" class="chosen-select col-sm-12 col-md-12">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-check form-check-inline col-sm-3 col-md-3">
+                        <input class="form-check-input" type="checkbox" id="iswaived" value="Waived">
+                        <label class="form-check-label" for="iswaived">Waived</label>
+                    </div>
+                    <!--div class="form-check form-check-inline col-sm-3 col-md-3">
+                        <input class="form-check-input" type="checkbox" id="issynctowits" value="Sync To Wits">
+                        <label class="form-check-label" for="issynctowits">Sync To Wits</label>
+                    </div>
+                    <div class="form-check form-check-inline col-sm-3 col-md-3">
+                        <input class="form-check-input" type="checkbox" id="isreviewed" value="Reviewed">
+                        <label class="form-check-label" for="issynctowits">Finidhed Review</label>
+                    </div-->
+                    <div class="whitespace col-sm-12 col-md-12" style="height: 2px"></div>
+                    <div class="form-group row">
+                        <label for="crremark" class="col-sm-2 col-md-2 col-form-label">Remark:</label>
+                        <div class="col-sm-9 col-md-9">
+                            <textarea name="content" id="crremark" rows="2" class="col-sm-11 col-md-11"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="crreviewcomment" class="col-sm-2 col-md-2 col-form-label">Review Comments:</label>
+                        <div class="col-sm-9 col-md-9">
+                            <textarea name="content" id="crreviewcomment" rows="10" readonly="readonly" class="col-sm-11 col-md-11"></textarea>
+                        </div>
+                        <label for="newcrreviewcomment" id="labelNewComment" class="col-sm-2 col-md-2 col-form-label">New Review Comments:</label>
+                        <div class="col-sm-9 col-md-9">
+                            <textarea name="content" id="newcrreviewcomment" rows="8" class="col-sm-11 col-md-11"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="cr_user_defined_additional_fields" class="col-sm-3 col-md-3 col-form-label">User defined Additional Fields:</label>
+                        <div class="col-sm-8 col-md-8" id="cr_user_defined_additional_fields" style = "height: 270px">
+                        </div>
+                    </div>
+                    <div class="whitespace col-sm-12 col-md-12" style="height: 20px"></div>
+                    <div style="text-align:center">
+                        <button type="submit" class="btn btn-primary" id="crReviewSubmit">Submit</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <!--button type="cancel" class="btn btn-primary" id="crReviewCancel">Cancel</button-->
+                    </div>
+                    -
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- client side area end -->
+</body>
+
+</html>

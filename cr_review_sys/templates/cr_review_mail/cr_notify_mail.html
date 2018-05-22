@@ -1,0 +1,1174 @@
+<!doctype html>
+<html>
+<head>
+<title>CR Notify</title>
+
+<style type="text/css">
+body {
+	
+}
+
+frame {
+	border: 1px solid #aaaaff;
+}
+
+.hand {
+	cursor: pointer;
+}
+
+.c {
+	text-align: center;
+}
+
+.b {
+	font-weight: bold;
+}
+
+.l {
+	text-align: left;
+}
+
+.r {
+	text-align: right;
+}
+
+.t {
+	vertical-align: top;
+}
+
+.m3 {
+	margin: 3px;
+}
+
+.w10 {
+	width: 10px;
+}
+
+.w15 {
+	width: 15px;
+}
+
+.w20 {
+	width: 20px;
+}
+
+.w40 {
+	width: 40px;
+}
+
+.w60 {
+	width: 60px;
+}
+
+.w80 {
+	width: 80px;
+}
+
+.w90 {
+	width: 90px;
+}
+
+.w100 {
+	width: 100px;
+}
+
+.w110 {
+	width: 110px;
+}
+
+.w120 {
+	width: 120px;
+}
+
+.w200 {
+	width: 200px;
+}
+
+.w250 {
+	width: 250px;
+}
+
+.w300 {
+	width: 300px;
+}
+
+.w400 {
+	width: 400px;
+}
+
+.w800 {
+	width: 800px;
+}
+
+.h800 {
+	height: 800px;
+}
+
+.w50p {
+	width: 50%;
+}
+
+.h30 {
+	height: 30px;
+}
+
+.f6 {
+	font-size: 6px;
+}
+
+.f7 {
+	font-size: 7px;
+}
+
+.f8 {
+	font-size: 8px;
+}
+
+.f9 {
+	font-size: 9px;
+}
+
+.f10 {
+	font-size: 10px;
+}
+
+.f11 {
+	font-size: 11px;
+}
+
+.f12 {
+	font-size: 12px;
+}
+
+.f13 {
+	font-size: 13px;
+}
+
+.f14 {
+	font-size: 14px;
+}
+
+.f16 {
+	font-size: 16px;
+}
+
+.fn {
+	font-weight: normal;
+}
+
+.fb {
+	font-weight: bold;
+}
+
+.bgWhite {
+	background-color: #ffffff;
+}
+
+.bgYellow {
+	background-color: #ffff88;
+}
+
+.bgLightGray {
+	background-color: #eeeeee;
+}
+
+.bgLightRed {
+	background-color: #ffcccc;
+}
+
+.bgLightLightRed {
+	background-color: #ffdddd;
+}
+
+.bgLightGreen {
+	background-color: #ccffcc;
+}
+
+.bgLightLightGreen {
+	background-color: #ddffdd;
+}
+
+.bgLightBlue {
+	background-color: #ccccff;
+}
+
+.bgLightYellow {
+	background-color: #ffffaa;
+}
+
+.bgLightOrange {
+	background-color: #ffaa77;
+}
+
+.bgLightYellowGreen {
+	background-color: #ccffaa;
+}
+
+.bgGrayRed {
+	background-color: #aa7777;
+}
+
+.bgGrayGreen {
+	background-color: #77aa77;
+}
+
+.bgGrayBlue {
+	background-color: #7777aa;
+}
+
+.bgOrange {
+	background-color: #ff8855;
+}
+
+.bgGrayGray {
+	background-color: #999999;
+}
+
+.colorBlack {
+	color: #000000;
+}
+
+.colorWhite {
+	color: #ffffff;
+}
+
+.colorGreen {
+	color: #008800;
+}
+
+.colorDarkGrayGreen {
+	color: #225522;
+}
+
+.colorRed {
+	color: #ff0000;
+}
+
+.colorGrayRed {
+	color: #884444;
+}
+
+.colorLightRed {
+	color: #ffcccc;
+}
+
+.colorLightGrayRed {
+	color: #ff8888;
+}
+
+.colorBlue {
+	color: #0000ff;
+}
+
+.colorDarkBlue {
+	color: #000088;
+}
+
+.colorGrayBlue {
+	color: #444488;
+}
+
+.colorLightBlue {
+	color: #ccccff;
+}
+
+.colorPurp {
+	color: #880088;
+}
+
+.colorGray {
+	color: #888888;
+}
+
+.colorWhiteGray {
+	color: #bbbbbb;
+}
+
+.colorOrange {
+	color: #ff6600;
+}
+
+.colorGrayOrange {
+	color: #cc6633;
+}
+
+.colorOrangeRed {
+	color: #ff3300;
+}
+
+.colorWhiteOrange {
+	color: #ffccaa;
+}
+
+.colorLightGray {
+	color: #bbbbbb;
+}
+
+.fontCalibri {
+	font-family: Calibri;
+}
+
+.underline {
+	text-decoration: underline;
+}
+
+.titleClass {
+	font-size: 18px;
+	margin: 5px;
+	font-family: Verdana;
+	color: #333366;
+	font-weight: bold;
+}
+
+.subTitleClass {
+	font-size: 15px;
+	margin: 5px;
+	font-family: Calibri;
+	font-weight: bold;
+	color: #333366;
+}
+
+.subsubTitleClass {
+	font-family: Calibri;
+	font-size: 14px;
+	margin: 5px;
+	margin-bottom: 10px;
+	color: #333366;
+}
+
+.crTableTitle {
+	font-family: Calibri;
+	font-size: 20px;
+	margin: 10px;
+	color: #225522;
+	font-weight: bold;
+}
+
+.viewHint {
+	font-family: Calibri;
+	font-size: 14px;
+	padding-left: 10px;
+	color: #666688;
+}
+
+.countTable {
+	font-family: Calibri;
+	border: 1px solid #88aa88;
+}
+
+.countTitleTr {
+	font-size: 14px;
+	font-family: Trebuchet MS;
+	background-color: #ddddff;
+	margin: 10px;
+}
+
+.countTitleTd {
+	padding: 5px;
+	font-family: Calibri;
+	font-size: 14px;
+	color: #ffffff;
+	text-align: center;
+	font-weight: bold;
+}
+
+.countTitleDateTd {
+	padding: 5px;
+	font-family: Calibri;
+	font-size: 14px;
+	color: #ffffff;
+	text-align: center;
+	font-weight: bold;
+}
+
+.countSumTitleTd {
+	width: 80px;
+	padding: 5px;
+	font-family: Calibri;
+	font-size: 14px;
+	background-color: #ff8855;
+	color: #ffffff;
+	text-align: center;
+	font-weight: bold;
+}
+
+.countSumTd {
+	font-family: Calibri;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.countOrangeTitleTd {
+	width: 100px;
+	padding: 5px;
+	font-family: Calibri;
+	font-size: 14px;
+	background-color: #ff9966;
+	color: #ffffff;
+	text-align: center;
+	font-weight: bold;
+}
+
+.countTd {
+	font-family: Calibri;
+	text-align: center;
+	font-size: 14px;
+}
+
+.countSumTd {
+	background-color: #ffccaa;
+	font-family: Calibri;
+	text-align: center;
+	color: #664422;
+}
+
+.copyCrTable {
+	border: 1px solid #88aa88;
+}
+
+.crTable {
+	font-family: Calibri;
+	font-size: 12px;
+	width: 99%;
+	border: 1px solid #88aa88;
+}
+
+.crTitleTr {
+	background-color: #669966;
+}
+
+.bgGreen {
+	background-color: #669966;
+}
+
+.bgOrange {
+	background-color: #ff9966;
+}
+
+.crTitleTd {
+	color: white;
+	text-align: center;
+	font-family: Calibri;
+	font-size: 14px;
+	font-weight: bold;
+	margin: 0px;
+	padding: 2px;
+	height: 30px;
+}
+
+.crTitleTrackingTd {
+	color: white;
+	text-align: center;
+	font-family: Calibri;
+	font-size: 14px;
+	font-weight: bold;
+	margin: 0px;
+	padding: 2px;
+	height: 30px;
+	background-color: #66aaff;
+}
+
+.crTitleAnalysisTd {
+	color: white;
+	text-align: center;
+	font-family: Calibri;
+	font-size: 14px;
+	font-weight: bold;
+	margin: 0px;
+	padding: 2px;
+	height: 30px;
+	background-color: #f7b101;
+}
+
+.crTitleRemarkTd {
+	color: white;
+	text-align: center;
+	font-family: Calibri;
+	font-size: 14px;
+	font-weight: bold;
+	margin: 0px;
+	padding: 2px;
+	height: 30px;
+	background-color: #eb8;
+}
+
+.crTitleTimeTd {
+	color: white;
+	text-align: center;
+	font-family: Calibri;
+	font-size: 14px;
+	font-weight: bold;
+	margin: 0px;
+	padding: 2px;
+	height: 30px;
+	background-color: #ff8888;
+}
+
+.iSpan {
+	padding-right: 3px;
+	font-family: Arial;
+	font-size: 10px;
+	color: #008800;
+	cursor: pointer;
+}
+
+.crTr {
+	font-family: Calibri;
+	font-size: 14px;
+	color: #003300;
+}
+
+.commentsHighlightTrClass {
+	border-top: 2px solid #9999cc;
+	border-bottom: 2px solid #9999cc;
+	background-color: #88cc88;
+}
+
+.oddBackground {
+	background-color: #ddffdd;
+}
+
+.hiddenClass {
+	width: 0px;
+	display: none;
+}
+
+.selDiv {
+	width: 1250px;
+}
+
+.crTrackingSelSpan {
+	margin: 0px;
+	padding: 0px;
+	border-bottom: 1px solid #aaaaaa;
+	font-family: Calibri;
+	font-size: 14px;
+}
+
+.selSpan {
+	padding: 5px;
+	padding-left: 0px;
+	border: 1px solid #ddd;
+	border-right: 3px solid #ddd;
+	font-family: Calibri;
+	font-size: 14px;
+	background-color: #f5f5fc;
+}
+
+.checkboxText {
+	font-family: Trebuchet MS;
+	font-size: 12px;
+	font-weight: normal;
+}
+
+.filterTypeItem {
+	margin: 2px;
+	margin-left: 0px;
+	padding: 5px;
+	border: 0px solid #aaaaaa;
+	background-color: #ffff88;
+}
+
+.filterTypeMpItem {
+	margin: 2px;
+	margin-left: 0px;
+	padding: 5px;
+	border: 0px solid #aaaaaa;
+	background-color: #ccddff;
+}
+
+.filterTypeTimeItem {
+	margin: 2px;
+	margin-left: 0px;
+	padding: 5px;
+	border: 0px solid #aaaaaa;
+	background-color: #ffcccc;
+}
+
+.filterTypeAnalysisItem {
+	margin: 2px;
+	margin-left: 0px;
+	padding: 5px;
+	border: 0px solid #aaaaaa;
+	background-color: #f7e181;
+}
+
+.filterTypeRemarkItem {
+	margin: 2px;
+	margin-left: 0px;
+	padding: 5px;
+	border: 0px solid #aaaaaa;
+	background-color: #ffddbb;
+}
+
+.sortMarkClass {
+	font-size: 10px;
+	cursor: pointer;
+}
+
+.highlightBg {
+	background-color: #ffff88;
+}
+
+.hightlightText {
+	color: #ffff33;
+}
+
+.tdTitle {
+	
+}
+
+.tdComments {
+	
+}
+
+.tdUser_Field3 {
+	font-size: 12px;
+}
+
+.tdSubmit_Date {
+	font-size: 14px;
+}
+
+.tdSubmit_DateTime {
+	font-size: 12px;
+}
+
+.tdAssign_Date {
+	font-size: 14px;
+}
+
+.tdAssign_DateTime {
+	font-size: 12px;
+}
+
+.tdDispatch_Count {
+	font-size: 12px;
+}
+
+.tdWaived {
+	font-size: 12px;
+}
+
+.localIssue {
+	color: #ff0000;
+	font-family: Calibri;
+	font-size: 14px;
+}
+
+.crDayClass {
+	width: 16px;
+	height: 16px;
+	border: 0px;
+	border-bottom: 1px solid #9999cc;
+	text-align: center;
+	font-family: Calibri;
+	font-size: 14px;
+	background-color: transparent;
+}
+
+.crDayClass2 {
+	width: 32px;
+	height: 16px;
+	border: 0px;
+	border-bottom: 1px solid #9999cc;
+	text-align: center;
+	font-family: Calibri;
+	font-size: 14px;
+	background-color: transparent;
+}
+
+.reviewedTd {
+	color: #888888;
+	background-color: #cccccc;
+}
+
+.reviewComments {
+	width: 99%;
+	height: 100px;
+	font-family: Calibri;
+	border: 1px solid #aaaaaa;
+}
+
+.crRemarkTextareaClass {
+	width: 99%;
+	height: 50px;
+	font-family: Calibri;
+	border: 1px solid #aaaaaa;
+	overflow: hidden;
+}
+
+.saveMpTracking {
+	width: 70px;
+	height: 20px;
+	background-color: #8888aa;
+	font-size: 14px;
+	font-family: Calibri;
+	font-weight: bold;
+	color: #ffffff;
+	border: 1px solid #666666;
+}
+
+.okSelMpTracking {
+	
+}
+
+.cancelSaveMpTracking {
+	width: 70px;
+	height: 20px;
+	background-color: #cccccc;
+	font-size: 14px;
+	font-family: Calibri;
+	font-weight: bold;
+	color: #666666;
+	border: 1px solid #aaaaaa;
+}
+
+.saveComments {
+	width: 100%;
+	height: 20px;
+	background-color: #8888aa;
+	font-size: 14px;
+	font-family: Calibri;
+	font-weight: bold;
+	color: #ffffff;
+	border: 1px solid #666666;
+}
+
+.cancelSaveComments {
+	width: 100%;
+	height: 20px;
+	background-color: #cccccc;
+	font-size: 14px;
+	font-family: Calibri;
+	font-weight: bold;
+	color: #666666;
+	border: 1px solid #aaaaaa;
+}
+
+#lastUpdate {
+	text-decoration: underline;
+}
+
+.commentsTd {
+	color: #555588;
+}
+
+.crMpTrackingModifyTd {
+	
+}
+
+.mpTrackingAppendTd {
+	cursor: arrow;
+	text-align: center;
+	background-color: #ccddff;
+}
+
+.crAnalysisTd {
+	cursor: arrow;
+	text-align: center;
+	background-color: #f7e1c1;
+	color: #c62;
+}
+
+.crRemarkTd {
+	cursor: arrow;
+	text-align: center;
+	background-color: #ffddcc;
+	color: #642;
+}
+
+.crTrackingType {
+	margin: 2px;
+	margin-left: 0px;
+	padding: 5px;
+	border: 1px solid #aaaaaa;
+	color: white;
+	font-family: Calibri;
+	font-weight: bold;
+	background-color: #aaaaaa;
+}
+
+.crTrackingTextClass {
+	padding-left: 5px;
+	padding-right: 5px;
+	background-color: transparent;
+	color: #777799;
+	font-family: Calibri;
+	font-weight: bold;
+}
+
+.mpTrackingInlineTitleTd {
+	height: 30px;
+	font-size: 14px;
+	font-family: Calibri;
+	font-weight: bold;
+	color: #338888;
+	vertical-align: middle;
+	text-align: right;
+	padding-right: 10px;
+	cursor: pointer;
+}
+
+.commentsInlineTitleTd {
+	font-size: 14px;
+	font-family: Calibri;
+	font-weight: bold;
+	color: #338833;
+	background-color: #ffffff;
+	vertical-align: top;
+	text-align: right;
+	padding-right: 10px;
+}
+
+.commentsInlineTd {
+	background-color: #ffffff;
+}
+
+.commentsInlineTr {
+	border-bottom: 3px solid #aaaaaa;
+}
+
+.mpTrackingInlineTr {
+	border: 3px solid #aaaaaa;
+	background-color: #ccddff;
+}
+
+.extendGreen {
+	background-color: #ccddff;
+}
+
+.commentFieldTitle {
+	margin-top: 5px;
+	width: 100%;
+	border: 1px solid #aaaaaa;
+	background-color: #ffffbb;
+	color: #333388;
+	font-weight: bold;
+	text-align: center;
+}
+
+.commentField {
+	width: 100%;
+}
+
+.crAnalysisField {
+	width: 150px;
+}
+
+.crRemarkField {
+	width: 150px;
+}
+
+.commentTable {
+	width: 99%;
+}
+
+.analysisTable {
+	width: 99%;
+}
+
+.remarkTable {
+	width: 99%;
+}
+
+.keywordFilter {
+	border: 0px solid #aaaaff;
+	border-bottom: 1px solid #9999cc;
+	width: 70px;
+	background-color: transparent;
+	text-align: center;
+}
+
+.bgLightYellow {
+	background-color: #ffffaa;
+}
+
+.commentsDateDiv {
+	margin-top: 5px;
+	margin-bottom: 3px;
+}
+
+.commentsDateSpan {
+	background-color: #aaffaa;
+	font-weight: bold;
+	padding-left: 5px;
+	padding-right: 5px;
+	border: 1px solid #88aa88;
+	color: #556655;
+}
+
+.iInfoSpan {
+	background-color: #336633;
+	font-weight: bold;
+	padding-left: 5px;
+	padding-right: 5px;
+	color: #aaffaa;
+}
+
+.selDivClass label {
+	font-family: Trebuchet MS;
+	font-size: 12px;
+	margin: 2px;
+	padding: 0px;
+}
+
+.selDivClass {
+	width: 99%;
+	height: 33px;
+	font-family: Calibri;
+	font-weight: bold;
+	color: #666699;
+	font-size: 16px;
+	margin: 5px;
+	margin-top: 10px;
+	padding: 2px;
+	background-color: #fff8f0;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+
+.selViewTitleClass {
+	margin-left: 10px;
+	margin-right: 5px;
+}
+
+.filterTable {
+	font-size: 20px;
+	font-family: Calibri;
+	font-weight: bold;
+	color: #333366;
+	width: 98%;
+	background-color: #f8f8fc;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 3px;
+	margin-top: 5px;
+}
+
+.filterSubTable {
+	margin-bottom: 2px;
+}
+
+.viewSelTable {
+	width: 99%;
+}
+
+.reportPageTitle {
+	font-family: Calibri;
+	font-size: 24px;
+	font-weight: bold;
+	color: #555588;
+	margin: 5px;
+	padding-left: 5px;
+	width: 99%;
+	margin: 0px;
+}
+
+.reportPageSubTitle {
+	font-family: Calibri;
+	font-size: 22px;
+	font-weight: bold;
+	color: #333366;
+	margin: 5px;
+}
+
+.reportPageSubSubTitle {
+	font-family: Calibri;
+	font-size: 18px;
+	font-weight: bold;
+	color: #333366;
+	margin: 5px;
+	margin-left: 20px;
+}
+
+.reportPageItemTitle {
+	font-family: Calibri;
+	font-size: 16px;
+	color: #333366;
+	margin: 5px;
+	margin-left: 40px;
+}
+
+.td_Dispatch_Count {
+	text-align: center;
+}
+
+.currAct {
+	font-size: 16px;
+	font-family: Trebuchet MS;
+	font-weight: normal;
+	text-decoration: underline;
+}
+
+.currActDate {
+	font-size: 16px;
+	font-family: Trebuchet MS;
+	font-weight: normal;
+}
+
+.plotChartButton {
+	font-family: Trebuchet MS;
+	font-size: 12px;
+	color: #1166cc;
+	margin: 2px;
+	cursor: pointer;
+	background-color: #eeddff;
+	border: 1px solid #2299bb;
+}
+
+#saveWaivedButton {
+	font-size: 11px;
+	font-family: Trebuchet MS;
+	font-weight: normal;
+	border: 1px solid #ccc;
+	color: #005500;
+}
+
+#addKeywordFilterButton {
+	font-size: 11px;
+	font-family: Trebuchet MS;
+	font-weight: bold;
+	border: 0px solid #ccc;
+	background-color: transparent;
+	color: #005500;
+	cursor: pointer;
+}
+
+.keywordMergeTypeButton {
+	font-size: 11px;
+	font-family: Calibri;
+	font-weight: bold;
+	border: 0px solid #000;
+	background-color: transparent;
+	color: #005500;
+	cursor: pointer;
+	width: 12px;
+	text-align: center;
+	padding: 0px;
+}
+
+.noteText {
+	margin-top: 5px;
+	font-size: 14px;
+	font-family: Calibri;
+	color: #333366;
+}
+
+.dummyClickProtection {
+	border: 0px solid #fff;
+	width: 0px;
+	background-color: transparent;
+}
+
+.infoTd {
+	background-color: #ccff99;
+}
+
+.iframe {
+	width: 99%;
+	height: 500px;
+	display: none;
+}
+
+.iframe2 {
+	width: 99%;
+	height: 500px;
+}
+
+.no {
+	display: none;
+}
+
+.plotChartDiv {
+	margin-top: 5px;
+}
+</style>
+</head>
+<body>
+	<div class="titleClass">{{activity_name}}</div>
+	<div class="subTitleClass">
+		<span class="colorRed">Open Bug CR(s) assigned more than
+			{{days_of_bug}} days (and others assigned more than
+			{{days_of_others}} days) are red highlighted.</span>
+	</div>
+	<div class="subTitleClass"></div>
+	<div class="subTitleClass">
+		Link: <a href={{url}}>{{url}}</a>
+	</div>
+	<div class="subTitleClass">
+		Count = <span id="totalCount">{{cr_count}}</span>
+		<button class="dummyClickProtection"></button>
+	</div>
+	<table class="crTable">
+		<tbody>
+			<tr class="crTitleTr">
+				{% for i in column_list %} {% if i == "Assign"%}
+				<td colspan="2" id={{i}} class="crTitleTd {{i}}">{{i}}<span
+					class="sortMarkClass " direct="down" sortfor={{i}}>¡¿</span><br>
+					<span class="f10 colorLightRed fn">(AssignDays)</span></td> {% else %}
+				<td id={{i}} class="crTitleTd {{i}}">{{i}}<span
+					class="sortMarkClass hightlightText" direct="down" sortfor="{{i}}">¡¿</span></td>
+				{% endif %} {% endfor %}
+			</tr>
+
+			{% for cr in cr_info %}
+			{% if cr.Class == "Bug" and cr.assign_count > days_of_bug %}
+				<tr class="crTr " style="background-color: rgb(255, 170, 170); color: rgb(170, 0, 0);">
+			{% elif cr.assign_count > days_of_others %}
+				<tr class="crTr " style="background-color: rgb(255, 170, 170); color: rgb(170, 0, 0);">
+			{% else %}
+				{% if forloop.counter|divisibleby:2 %}
+				<tr class="crTr " style="background-color: rgb(221, 255, 221);">
+				{% else %}
+				<tr class="crTr ">
+				{% endif %}
+			{% endif %}
+				{% for key, value in cr.items %}
+					{% if key in column_list %}
+						{% if key == "ID"%}
+							{% if cr.Class == "Bug" %}
+								<td id={{value}} class="c {{key}}"><a href={{cr.cr_link}} class="colorRed c">{{value}}</a></td>
+							{% else %}
+								<td id={{value}} class="c {{key}}"><a href={{cr.cr_link}}>{{value}}</a></td>
+							{% endif %}
+						{% elif key == "Assign Team" %}
+							<td id={{value}} class="c {{key}}"><a href={{cr.assign_dept_link}}>{{value}}</a></td>
+						{% elif key == "Assignee"%}
+							<td id={{value}} class="c {{key}}"><a href={{cr.assginee_link}}>{{value}}</a></td>
+						{% elif key == "Assign" %}
+							<td id={{value}} class={{key}}>{{value}}</td>
+							<td id={{cr.assign_count}} class="">{{cr.assign_count}}</td>
+						{% elif key == "First-hand Analysis" %}
+							<td id={{value}} class="c {{key}}">{{value}}</td>
+						{% elif key == "Class" %}
+							{% if value == "Bug" %}
+								<td id={{value}} class="colorRed c">{{value}}</td>
+							{% else %}
+								<td id={{value}} class={{key}}>{{value}}</td>
+							{% endif %}
+						{% elif key == "Review Comments" %}
+							{% for each_comment in value %}
+								<div class="comments ">
+								<div class="commentsDateDiv">
+									<span class="commentsDateSpan">{{each_comment.updated_time}}</span>
+								</div>
+									[{{each_comment.login_name}}] <br>{{each_comment.review_comments}}
+								</div>	
+							{% endfor %}
+							 
+						{% else %}
+							<td id={{value}} class={{key}}>{{value}}</td>
+						{% endif %}
+						 
+					{% endif %} 
+				{% endfor %} 
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	<div id="noteText" class="noteText"></div>
+	<div class="subsubTitleClass">Remind: Please update your progress
+		status or schedule plan for red highlighted CR(s). Thanks!</div>
+</body>
+</html>

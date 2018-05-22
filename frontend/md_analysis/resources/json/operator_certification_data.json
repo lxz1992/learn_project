@@ -1,0 +1,115 @@
+{
+	"data": {
+		"China": {
+			"CMCC": {
+				"ongoing": 3,
+				"incoming": 2,
+				"urgent": 3
+			},
+			"CT": {
+				"ongoing": 2,
+				"incoming": 1,
+				"urgent": 2
+			},
+			"CU": {
+				"ongoing": 5,
+				"incoming": 3,
+				"urgent": 4
+			}
+		},
+		"India": {
+			"operator1": {
+				"ongoing": 2,
+				"incoming": 0,
+				"urgent": 1
+			},
+			"operator2": {
+				"ongoing": 4,
+				"incoming": 1,
+				"urgent": 2
+			}
+		},
+		"Aus": {
+			"oper1": {
+				"ongoing": 3,
+				"incoming": 2,
+				"urgent": 3
+			},
+			"oper2": {
+				"ongoing": 2,
+				"incoming": 1,
+				"urgent": 2
+			},
+			"oper3": {
+				"ongoing": 5,
+				"incoming": 3,
+				"urgent": 4
+			},
+			"oper4": {
+				"ongoing": 3,
+				"incoming": 2,
+				"urgent": 3
+			}
+		},
+		"EU": {
+			"operator": {
+				"ongoing": 3,
+				"incoming": 2,
+				"urgent": 3
+			}
+		},
+		"Asia": {
+			"operator1": {
+				"ongoing": 3,
+				"incoming": 2,
+				"urgent": 3
+			},
+			"operator2": {
+				"ongoing": 2,
+				"incoming": 1,
+				"urgent": 2
+			}
+		},
+		"North A": {
+			"o1": {
+				"ongoing": 3,
+				"incoming": 2,
+				"urgent": 3
+			},
+			"o2": {
+				"ongoing": 6,
+				"incoming": 5,
+				"urgent": 2
+			},
+			"o3": {
+				"ongoing": 5,
+				"incoming": 3,
+				"urgent": 4
+			}
+		},
+		"LATAM": {
+			"o1": {
+				"ongoing": 3,
+				"incoming": 2,
+				"urgent": 3
+			}
+		},
+		"Africa": {
+			"o5": {
+				"ongoing": 3,
+				"incoming": 2,
+				"urgent": 3
+			}
+		},
+		"Other": {
+			"o7": {
+				"ongoing": 3,
+				"incoming": 2,
+				"urgent": 3
+			}
+		}
+
+	},
+	"updateTime": "2017/11/27 09:23:31"
+
+}

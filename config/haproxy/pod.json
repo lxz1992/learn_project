@@ -1,0 +1,30 @@
+{
+	"kind": "Pod",
+	"apiVersion": "v1",
+	"metadata": {
+		"name": "ha",
+		"namespace": "mtd-prod-kube-171019",
+		"labels": {
+			"app": "ha"
+		}
+	},
+	"spec": {
+		"containers": [
+			{
+				"name": "ha",
+				"image": "172.27.16.100:5000/mytodoprod_haproxy1:20180402-rc2",
+				"imagePullPolicy": "IfNotPresent",
+				"env": [
+					{
+						"name": "TZ",
+						"value": "Asia/Taipei"
+					}
+				]
+			}
+		],
+		"restartPolicy": "Always",
+		"nodeSelector": {
+			"lb": "true"
+		}
+	}
+}

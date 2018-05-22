@@ -1,0 +1,33 @@
+version: '3.2'
+services:
+  haproxy1:
+    build: ./config/haproxy
+    ports:
+      - "80:80"
+      - "5566:5566"
+      - "5678:5678"
+    volumes:
+      - "/dev/log:/dev/log"
+    environment:
+      TZ: Asia/Taipei    
+
+  nginx1:
+    build: ./config/nginx
+    volumes:
+      - "/dev/log:/dev/log"
+      - "/tmp:/var/log/nginx"
+    expose:
+      - "8888"
+    environment:
+      TZ: Asia/Taipei
+
+  app1:
+    build: .
+    volumes:
+      - "/dev/log:/dev/log"
+      - "/tmp:/tmp"
+    expose:
+      - "8080"
+      - "5678"
+    environment:
+      TZ: Asia/Taipei

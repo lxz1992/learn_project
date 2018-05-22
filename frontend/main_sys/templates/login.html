@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>MyToDo</title>
+</head>
+
+<body>
+    <div class="dyn-body">
+        <!-- client side area begin -->
+
+        <div class="login-view-container">
+            <div id="login-view-alone" class="login-card login-card-container">
+                <img id="profile-img" class="profile-img-card" src="../../assets/img/avatar_2x.png" />
+                <p id="profile-name" class="profile-name-card"></p>
+                <form class="form-signin">
+                    <span id="reauth-email" class="reauth-email"></span>
+                    <input type="text" id="login-username" class="form-control" placeholder="User ID" required autofocus>
+                    <input type="password" id="login-password" class="form-control" placeholder="Password" required>
+                    <div id="login-alone-error-msg" style="display:none; color: #d50000;"></div>
+                    <div id="remember" class="checkbox">
+                        <label>
+                            <input type="checkbox" value="remember-me"> Remember me
+                        </label>
+                    </div>
+                    <a href="javascript:void(0)" class="login-btn btn-lg btn-primary btn-block btn-signin">Sign in</button>
+                </form>
+                <!-- /form -->
+                <a href="#" class="forgot-password">
+                    Forgot the password?
+                </a>
+            </div>
+
+            <!-- /card-container -->
+        </div>
+
+        <!-- client side area end -->
+    </div>
+    <!-- 
+    <div class="version-footer">
+        <div class="subsys-version-container">
+            <p class="navbar-text pull-right">v{{ BACKEND_VERSION }}-@frontend-version@</p>
+        </div>
+    </div>
+     -->
+</body>
+
+</html>
